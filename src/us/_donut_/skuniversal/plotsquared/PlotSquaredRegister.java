@@ -42,8 +42,8 @@ public class PlotSquaredRegister {
         Skript.registerEvent("PlotSquared - Plot Claim", SkUniversalEvent.class, PlayerClaimPlotEvent.class, "[PlotSquared] plot claim[ing]")
                 .description("Called when a plot is claimed.")
                 .examples("on plot claim:", "\tbroadcast \"Plot %event-string% was claimed!\"");
-        EventValues.registerEventValue(PlotDeleteEvent.class, String.class, new Getter<String, PlotDeleteEvent>() {
-            public String get(PlotDeleteEvent e) {
+        EventValues.registerEventValue(PlotClaimEvent.class, String.class, new Getter<String, PlotClaimEvent>() {
+            public String get(PlotClaimEvent e) {
                 return e.getPlotId().toString();
             }
         }, 0);
